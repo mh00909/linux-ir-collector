@@ -1,0 +1,382 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.2  0.0 168828 14240 ?        Ss   lut06   7:59 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    lut06   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    lut06   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    lut06   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    lut06   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    lut06   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    lut06   0:07 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    lut06   1:22 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/1]
+root          22  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/1]
+root          23  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/1]
+root          24  0.0  0.0      0     0 ?        S    lut06   0:04 [ksoftirqd/1]
+root          26  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/1:0H-events_highpri]
+root          27  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/2]
+root          28  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/2]
+root          29  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/2]
+root          30  0.0  0.0      0     0 ?        S    lut06   0:02 [ksoftirqd/2]
+root          32  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/2:0H-events_highpri]
+root          33  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/3]
+root          34  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/3]
+root          35  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/3]
+root          36  0.0  0.0      0     0 ?        S    lut06   0:01 [ksoftirqd/3]
+root          38  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/3:0H-events_highpri]
+root          39  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/4]
+root          40  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/4]
+root          41  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/4]
+root          42  0.0  0.0      0     0 ?        S    lut06   0:03 [ksoftirqd/4]
+root          44  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/4:0H-events_highpri]
+root          45  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/5]
+root          46  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/5]
+root          47  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/5]
+root          48  0.0  0.0      0     0 ?        S    lut06   0:05 [ksoftirqd/5]
+root          50  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/5:0H-events_highpri]
+root          51  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/6]
+root          52  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/6]
+root          53  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/6]
+root          54  0.0  0.0      0     0 ?        S    lut06   0:25 [ksoftirqd/6]
+root          56  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/6:0H-events_highpri]
+root          57  0.0  0.0      0     0 ?        S    lut06   0:00 [cpuhp/7]
+root          58  0.0  0.0      0     0 ?        S    lut06   0:00 [idle_inject/7]
+root          59  0.0  0.0      0     0 ?        S    lut06   0:00 [migration/7]
+root          60  0.0  0.0      0     0 ?        S    lut06   0:01 [ksoftirqd/7]
+root          62  0.0  0.0      0     0 ?        I<   lut06   0:13 [kworker/7:0H-events_highpri]
+root          63  0.0  0.0      0     0 ?        S    lut06   0:00 [kdevtmpfs]
+root          64  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-inet_]
+root          65  0.0  0.0      0     0 ?        S    lut06   0:19 [kauditd]
+root          66  0.0  0.0      0     0 ?        S    lut06   0:00 [khungtaskd]
+root          67  0.0  0.0      0     0 ?        S    lut06   0:00 [oom_reaper]
+root          69  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-write]
+root          71  0.0  0.0      0     0 ?        S    lut06   0:47 [kcompactd0]
+root          72  0.0  0.0      0     0 ?        SN   lut06   0:00 [ksmd]
+root          73  0.0  0.0      0     0 ?        SN   lut06   0:00 [khugepaged]
+root          74  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-kinte]
+root          75  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-kbloc]
+root          76  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-blkcg]
+root          77  0.0  0.0      0     0 ?        S    lut06   0:00 [irq/9-acpi]
+root          80  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-tpm_d]
+root          81  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-ata_s]
+root          82  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-md]
+root          83  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-md_bi]
+root          84  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-edac-]
+root          85  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-devfr]
+root          86  0.0  0.0      0     0 ?        S    lut06   0:00 [watchdogd]
+root          87  0.0  0.0      0     0 ?        I<   lut06   0:09 [kworker/0:1H-events_highpri]
+root          88  0.0  0.0      0     0 ?        S    lut06   0:15 [kswapd0]
+root          89  0.0  0.0      0     0 ?        S    lut06   0:00 [ecryptfs-kthread]
+root          90  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-kthro]
+root          92  0.0  0.0      0     0 ?        S    lut06   0:00 [irq/122-aerdrv]
+root          93  0.0  0.0      0     0 ?        S    lut06   0:00 [irq/122-pcie-dpc]
+root          94  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-acpi_]
+root          97  0.0  0.0      0     0 ?        S    lut06   0:02 [hwrng]
+root          98  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-mld]
+root          99  0.0  0.0      0     0 ?        I<   lut06   0:09 [kworker/1:1H-events_highpri]
+root         100  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-ipv6_]
+root         107  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-kstrp]
+root         125  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-charg]
+root         146  0.0  0.0      0     0 ?        I<   lut06   0:07 [kworker/3:1H-events_highpri]
+root         150  0.0  0.0      0     0 ?        I<   lut06   0:05 [kworker/4:1H-events_highpri]
+root         162  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/7:1H]
+root         164  0.0  0.0      0     0 ?        I<   lut06   0:05 [kworker/5:1H-events_highpri]
+root         165  0.0  0.0      0     0 ?        I<   lut06   0:06 [kworker/2:1H-events_highpri]
+root         167  0.0  0.0      0     0 ?        I<   lut06   0:07 [kworker/6:1H-events_highpri]
+root         196  0.0  0.0      0     0 ?        S    lut06   0:00 [scsi_eh_0]
+root         197  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-scsi_]
+root         206  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-sdhci]
+root         208  0.0  0.0      0     0 ?        S    lut06   0:00 [irq/132-0000:00:14.5 cd]
+root         210  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-nvme-]
+root         211  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-nvme-]
+root         212  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-nvme-]
+root         213  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-nvme-]
+root         230  0.1  0.0      0     0 ?        S    lut06   4:38 [irq/53-ELAN1300:00]
+root         243  0.0  0.0      0     0 ?        S    lut06   0:00 [spi1]
+root         310  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-raid5]
+root         341  0.0  0.0      0     0 ?        S    lut06   0:14 [jbd2/nvme0n1p5-8]
+root         342  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-ext4-]
+root         394  0.2  0.5 159448 91160 ?        S<s  lut06   7:25 /lib/systemd/systemd-journald
+root         467  0.0  0.0  27340  6968 ?        Ss   lut06   0:01 /lib/systemd/systemd-udevd
+root         536  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-cfg80]
+root         539  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-led_w]
+root         548  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-crypt]
+root         553  0.0  0.0      0     0 ?        S    lut06   0:52 [irq/144-iwlwifi:default_queue]
+root         554  0.0  0.0      0     0 ?        S    lut06   0:20 [irq/145-iwlwifi:queue_1]
+root         555  0.0  0.0      0     0 ?        S    lut06   0:15 [irq/146-iwlwifi:queue_2]
+root         556  0.0  0.0      0     0 ?        S    lut06   0:18 [irq/147-iwlwifi:queue_3]
+root         558  0.0  0.0      0     0 ?        S    lut06   0:12 [irq/148-iwlwifi:queue_4]
+root         559  0.0  0.0      0     0 ?        S    lut06   0:18 [irq/149-iwlwifi:queue_5]
+root         560  0.0  0.0      0     0 ?        S    lut06   0:16 [irq/150-iwlwifi:queue_6]
+root         561  0.0  0.0      0     0 ?        S    lut06   0:19 [irq/151-iwlwifi:queue_7]
+root         562  0.0  0.0      0     0 ?        S    lut06   0:13 [irq/152-iwlwifi:queue_8]
+root         563  0.0  0.0      0     0 ?        S    lut06   0:00 [irq/153-iwlwifi:exception]
+root         718  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-ttm]
+root         722  0.0  0.0      0     0 ?        S    lut06   0:00 [card1-crtc0]
+root         723  0.0  0.0      0     0 ?        S    lut06   0:00 [card1-crtc1]
+root         724  0.0  0.0      0     0 ?        S    lut06   0:00 [card1-crtc2]
+_rpc         775  0.0  0.0   8108  4056 ?        Ss   lut06   0:00 /sbin/rpcbind -f -w
+systemd+     780  0.0  0.0  14836  6808 ?        Ss   lut06   1:57 /lib/systemd/systemd-oomd
+systemd+     790  0.0  0.1  29252 17096 ?        Ss   lut06   0:17 /lib/systemd/systemd-resolved
+systemd+     798  0.0  0.0  89720  7700 ?        Ssl  lut06   0:00 /lib/systemd/systemd-timesyncd
+root         873  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-rpcio]
+root         877  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-xprti]
+root        1006  0.0  0.0 243036  8308 ?        Ssl  lut06   0:18 /usr/libexec/accounts-daemon
+root        1007  0.0  0.0   2816  2008 ?        Ss   lut06   0:05 /usr/sbin/acpid
+avahi       1010  0.0  0.0   7632  4120 ?        Ss   lut06   0:02 avahi-daemon: running [monika-vivobook-asuslaptop-x512ja-k512ja.local]
+root        1013  0.0  0.0  12028  3044 ?        Ss   lut06   0:00 /usr/sbin/cron -f -P
+message+    1014  0.1  0.0  11496  7576 ?        Ss   lut06   3:46 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root        1016  0.0  0.1 264808 19188 ?        Ssl  lut06   0:18 /usr/sbin/NetworkManager --no-daemon
+root        1024  0.0  0.0  82804  4140 ?        Ssl  lut06   0:09 /usr/sbin/irqbalance --foreground
+root        1027  0.0  0.1  43756 21908 ?        Ss   lut06   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root        1032  0.0  0.0 237008 10912 ?        Ssl  lut06   0:18 /usr/libexec/polkitd --no-debug
+root        1037  0.0  0.0 242640  7820 ?        Ssl  lut06   0:00 /usr/libexec/power-profiles-daemon
+syslog      1039  0.0  0.0 222404  6216 ?        Ssl  lut06   1:07 /usr/sbin/rsyslogd -n -iNONE
+root        1044  0.0  0.0  11532  5676 ?        Ss   lut06   0:00 /usr/sbin/smartd -n
+root        1050  0.0  0.1 1770860 28372 ?       Ssl  lut06   0:47 /usr/lib/snapd/snapd
+root        1053  0.0  0.0 238916  6624 ?        Ssl  lut06   0:00 /usr/libexec/switcheroo-control
+root        1057  0.0  0.0  48280  8232 ?        Ss   lut06   0:49 /lib/systemd/systemd-logind
+root        1058  0.0  0.0 278760 11408 ?        Ssl  lut06   0:40 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+root        1059  0.0  0.0 393884 13504 ?        Ssl  lut06   0:01 /usr/libexec/udisks2/udisksd
+root        1060  0.0  0.0  17920 11304 ?        Ss   lut06   0:02 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+clamav      1065  0.0  6.2 1222580 1006664 ?     Ssl  lut06   0:52 /usr/sbin/clamd --foreground=true
+avahi       1069  0.0  0.0   7444  1416 ?        S    lut06   0:00 avahi-daemon: chroot helper
+root        1149  0.0  0.0 318160 11680 ?        Ssl  lut06   0:00 /usr/sbin/ModemManager
+root        1170  0.0  0.5 254088 86144 ?        Ss   lut06   0:01 /usr/bin/python3 -m proton.vpn.daemon
+root        1188  0.0  0.0   2892  1688 ?        Ss   lut06   0:00 /bin/sh /snap/cups/1142/scripts/run-cups-browsed
+root        1190  0.0  0.0   2892  1696 ?        Ss   lut06   0:00 /bin/sh /snap/cups/1142/scripts/run-cupsd
+root        1199  0.0  0.0  80672 15892 ?        Ss   lut06   0:01 /usr/sbin/winbindd --foreground --no-process-group
+root        1217  0.0  0.1 2089388 21844 ?       Ssl  lut06   1:18 /usr/bin/containerd
+root        1238  0.0  0.0  15436  9124 ?        Ss   lut06   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+mosquit+    1239  0.0  0.0  15732  8280 ?        Ss   lut06   0:41 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+root        1242  0.0  0.0  10664  5068 ?        Ss   lut06   0:00 /usr/lib/bluetooth/bluetoothd
+root        1250  0.0  0.1 120744 23164 ?        Ssl  lut06   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+colord      1255  0.0  0.0 321808 13212 ?        Ssl  lut06   0:00 /usr/libexec/colord
+root        1259  0.0  0.0  17276  2352 ?        S    lut06   0:00 /usr/sbin/xrdp-sesman
+root        1307  0.0  0.0 245248  9536 ?        Ssl  lut06   0:04 /usr/libexec/upowerd
+root        1309  0.0  0.0  81120 10676 ?        S    lut06   0:00 winbindd: domain child [MONIKA-VIVOBOOK-ASUSLAPTOP-X512JA-K512JA]
+xrdp        1326  0.0  0.0  17396  2188 ?        S    lut06   0:00 /usr/sbin/xrdp
+postgres    1374  0.0  0.1 223528 29232 ?        Ss   lut06   0:01 /usr/lib/postgresql/14/bin/postgres -D /var/lib/postgresql/14/main -c config_file=/etc/postgresql/14/main/postgresql.conf
+postgres    1456  0.0  0.0 223640  9592 ?        Ss   lut06   0:00 postgres: 14/main: checkpointer 
+postgres    1457  0.0  0.0 223528  8856 ?        Ss   lut06   0:00 postgres: 14/main: background writer 
+postgres    1458  0.0  0.0 223528 11736 ?        Ss   lut06   0:00 postgres: 14/main: walwriter 
+postgres    1459  0.0  0.0 224092 10156 ?        Ss   lut06   0:00 postgres: 14/main: autovacuum launcher 
+postgres    1460  0.0  0.0  78120  7368 ?        Ss   lut06   0:00 postgres: 14/main: stats collector 
+postgres    1461  0.0  0.0 223956  9260 ?        Ss   lut06   0:00 postgres: 14/main: logical replication launcher 
+root        1481  0.0  0.1 235584 21208 ?        Ss   lut06   0:04 /usr/sbin/apache2 -k start
+root        1665  0.0  0.0  64708  7960 ?        S    lut06   0:01 cupsd -f -s /var/snap/cups/common/etc/cups/cups-files.conf -c /var/snap/cups/common/etc/cups/cupsd.conf
+root        1666  0.0  0.0 241688  5444 ?        Sl   lut06   0:01 cups-proxyd /var/snap/cups/common/run/cups.sock /run/cups/cups.sock -l --logdir /var/snap/cups/1142/var/log
+root        1724  0.0  0.0   2892  1036 ?        S    lut06   0:00 /bin/sh /snap/cups/1142/scripts/run-cups-browsed
+clamav      1824  0.0  0.1 147740 19804 ?        Ss   lut06   0:01 /usr/bin/freshclam -d --foreground=true
+root        1826  0.0  0.2 3645860 43836 ?       Ssl  lut06   0:25 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+kernoops    1853  0.0  0.0  13096  2300 ?        Ss   lut06   0:00 /usr/sbin/kerneloops --test
+kernoops    1864  0.0  0.0  13096  2296 ?        Ss   lut06   0:00 /usr/sbin/kerneloops
+root        1918  0.0  0.0      0     0 ?        I<   lut06   0:00 [kworker/R-iprt-]
+root        1926  0.0  0.0      0     0 ?        S    lut06   0:00 [iprt-VBoxTscThread]
+root        1943  0.0  0.0 243884  8964 ?        Ssl  lut06   0:00 /usr/sbin/gdm3
+rtkit       1994  0.0  0.0 154004  3428 ?        SNsl lut06   0:01 /usr/libexec/rtkit-daemon
+root        2494  0.0  0.3 451100 50524 ?        Ssl  lut06   0:15 /usr/libexec/packagekitd
+root        2714  0.0  0.0 320868 11976 ?        Sl   lut06   0:00 gdm-session-worker [pam/gdm-password]
+monika      2754  0.0  0.0  18348 11252 ?        Ss   lut06   0:07 /lib/systemd/systemd --user
+monika      2755  0.0  0.0 170748  6596 ?        S    lut06   0:00 (sd-pam)
+monika      2761  0.0  0.0  42384  5388 ?        S<sl lut06   0:00 /usr/bin/pipewire
+monika      2762  0.0  0.0  26152  5080 ?        Ssl  lut06   0:00 /usr/bin/pipewire-media-session
+monika      2763  1.5  0.1 3224844 30108 ?       S<sl lut06  46:40 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+monika      2772  0.0  0.0 243936  8172 ?        SLl  lut06   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+monika      2784  0.0  0.0   9968  6240 ?        Ss   lut06   0:14 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+monika      2788  0.0  0.0 238688  6420 ?        Ssl  lut06   0:00 /usr/libexec/xdg-permission-store
+monika      2811  0.0  0.0 164972  6400 tty2     Ssl+ lut06   0:00 /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+monika      2813  1.9  0.8 1694184 136196 tty2   Sl+  lut06  59:00 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -nolisten tcp -background none -noreset -keeptty -novtswitch -verbose 3
+monika      2867  0.0  0.0 225580 15800 tty2     Sl+  lut06   0:00 /usr/libexec/gnome-session-binary --session=ubuntu
+root        2898  0.0  0.0      0     0 ?        S<   lut06   0:00 [krfcommd]
+monika      2958  0.0  0.0 309816  8528 ?        Ssl  lut06   0:00 /usr/libexec/at-spi-bus-launcher
+monika      2964  0.0  0.0   8564  4720 ?        S    lut06   0:01 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_1
+monika      2980  0.0  0.0  94448  5376 ?        Ssl  lut06   0:00 /usr/libexec/gnome-session-ctl --monitor
+monika      2990  0.0  0.0 243284  7960 ?        Ssl  lut06   0:00 /usr/libexec/gvfsd
+monika      3000  0.0  0.1 522040 17820 ?        Ssl  lut06   0:09 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+monika      3023  3.1  2.0 6108072 329224 ?      Ssl  lut06  95:27 /usr/bin/gnome-shell
+monika      3057  0.0  0.0  39132  5480 ?        Ss   lut06   0:00 /snap/snapd-desktop-integration/343/usr/bin/snapd-desktop-integration
+monika      3065  0.0  0.1 583192 20844 ?        Sl   lut06   0:00 /usr/libexec/gnome-shell-calendar-server
+monika      3079  0.0  0.1 1074804 25304 ?       Ssl  lut06   0:00 /usr/libexec/evolution-source-registry
+monika      3114  0.0  0.2 599092 38276 ?        Sl   lut06   0:00 /usr/libexec/goa-daemon
+monika      3132  0.0  0.1 1383768 30048 ?       Ssl  lut06   0:00 /usr/libexec/evolution-calendar-factory
+monika      3135  0.0  0.4 877508 71512 ?        Sl   lut06   0:08 /snap/snapd-desktop-integration/343/usr/bin/snapd-desktop-integration
+monika      3136  0.0  0.0 392504 11820 ?        Ssl  lut06   0:01 /usr/libexec/gvfs-udisks2-volume-monitor
+monika      3146  0.0  0.0 340940 15348 ?        Sl   lut06   0:05 /usr/libexec/goa-identity-service
+monika      3160  0.0  0.0 157208  6336 ?        Ssl  lut06   0:00 /usr/libexec/dconf-service
+monika      3163  0.0  0.1 756928 27908 ?        Ssl  lut06   0:00 /usr/libexec/evolution-addressbook-factory
+monika      3167  0.0  0.0 240084  7120 ?        Ssl  lut06   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+monika      3173  0.0  0.0 239184  6760 ?        Ssl  lut06   0:00 /usr/libexec/gvfs-goa-volume-monitor
+monika      3181  0.0  0.0 317764  8432 ?        Ssl  lut06   0:03 /usr/libexec/gvfs-afc-volume-monitor
+monika      3188  0.0  0.0 238996  6688 ?        Ssl  lut06   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+monika      3201  0.0  0.0 324016 15984 ?        Sl   lut06   0:01 /usr/libexec/gvfsd-trash --spawner :1.20 /org/gtk/gvfs/exec_spaw/0
+monika      3225  0.0  0.1 2933852 28212 ?       Sl   lut06   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+monika      3227  0.0  0.0 162760  8428 ?        Sl   lut06   0:05 /usr/libexec/at-spi2-registryd --use-gnome-session
+monika      3243  0.0  0.0 757400 12876 ?        Ssl  lut06   0:02 /usr/libexec/xdg-desktop-portal
+monika      3250  0.0  0.0   2892  1800 ?        Ss   lut06   0:00 sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+monika      3251  0.0  0.0 313012  7112 ?        Ssl  lut06   0:01 /usr/libexec/gsd-a11y-settings
+monika      3254  0.0  0.0 318008 12716 ?        Sl   lut06   1:14 /usr/bin/ibus-daemon --panel disable --xim
+monika      3255  0.0  0.1 613628 28980 ?        Ssl  lut06   0:02 /usr/libexec/gsd-color
+monika      3258  0.0  0.0 378060 16088 ?        Ssl  lut06   0:01 /usr/libexec/gsd-datetime
+monika      3261  0.0  0.0 315296  9100 ?        Ssl  lut06   0:06 /usr/libexec/gsd-housekeeping
+monika      3264  0.0  0.1 417780 24876 ?        Ssl  lut06   0:02 /usr/libexec/gsd-keyboard
+monika      3271  0.0  0.1 867784 29780 ?        Ssl  lut06   0:10 /usr/libexec/gsd-media-keys
+monika      3279  0.0  0.1 718996 30332 ?        Ssl  lut06   0:06 /usr/libexec/gsd-power
+monika      3280  0.0  0.0 252524 11452 ?        Ssl  lut06   0:01 /usr/libexec/gsd-print-notifications
+monika      3284  0.0  0.0 460396  6924 ?        Ssl  lut06   0:01 /usr/libexec/gsd-rfkill
+monika      3285  0.0  0.0 238828  6308 ?        Ssl  lut06   0:01 /usr/libexec/gsd-screensaver-proxy
+monika      3288  0.0  0.0 468800 10984 ?        Ssl  lut06   0:08 /usr/libexec/gsd-sharing
+monika      3290  0.0  0.0 314892  8100 ?        Ssl  lut06   0:01 /usr/libexec/gsd-smartcard
+monika      3292  0.0  0.0 321932  9968 ?        Ssl  lut06   0:01 /usr/libexec/gsd-sound
+monika      3294  0.0  0.2 506224 48444 ?        Sl   lut06   0:10 /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
+monika      3296  0.0  0.1 344356 25108 ?        Ssl  lut06   0:02 /usr/libexec/gsd-wacom
+monika      3300  0.0  0.4 5106032 78048 ?       Sl   lut06   2:42 /home/monika/.MathWorks/ServiceHost/-mw_shared_installs/v2026.1.0.2/bin/glnxa64/MathWorksServiceHost service --realm-id companion@prod@production
+monika      3301  0.0  0.1 346432 28060 ?        Ssl  lut06   0:02 /usr/libexec/gsd-xsettings
+monika      3312  0.0  0.0 316776  8348 ?        Sl   lut06   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+monika      3313  0.0  0.5 1444516 88064 ?       Ssl  lut06   0:11 /usr/libexec/xdg-desktop-portal-gnome
+monika      3315  0.0  0.4 766592 65716 ?        Sl   lut06   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+monika      3339  0.0  0.0 232284  8420 ?        Sl   lut06   0:00 /usr/libexec/gsd-disk-utility-notify
+monika      3349  0.0  0.0 239868  7544 ?        Sl   lut06   0:00 /usr/libexec/ibus-dconf
+monika      3353  0.0  0.1 275192 30160 ?        Sl   lut06   0:26 /usr/libexec/ibus-extension-gtk3
+monika      3364  0.0  0.1 196788 24900 ?        Sl   lut06   0:00 /usr/libexec/ibus-x11 --kill-daemon
+monika      3368  0.0  0.0 239812  7680 ?        Sl   lut06   0:00 /usr/libexec/ibus-portal
+monika      3375  0.0  0.0 344896 15224 ?        Sl   lut06   0:00 /usr/libexec/gsd-printer
+monika      3415  0.1  0.8 1459865928 134520 ?   Sl   lut06   4:33 /snap/discord/268/usr/share/discord/Discord --use-tray-icon --no-sandbox --disable-seccomp-filter-sandbox
+monika      3419  0.0  1.2 802032 195248 ?       Sl   lut06   0:19 /snap/snap-store/1216/usr/bin/snap-store --gapplication-service
+monika      3546  0.0  0.1 2868284 28160 ?       Sl   lut06   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+monika      3559  0.0  0.0 166152  7564 ?        Sl   lut06   0:16 /usr/libexec/ibus-engine-simple
+monika      3568  0.0  0.2 651784 33848 ?        SNsl lut06   0:03 /usr/libexec/tracker-miner-fs-3
+monika      3781  0.0  0.1 33802312 26784 ?      S    lut06   0:00 /snap/discord/268/usr/share/discord/Discord --type=zygote --no-zygote-sandbox --disable-seccomp-filter-sandbox --no-sandbox
+monika      3782  0.0  0.1 33802300 26732 ?      S    lut06   0:00 /snap/discord/268/usr/share/discord/Discord --type=zygote --disable-seccomp-filter-sandbox --no-sandbox
+monika      3783  0.0  0.1 345148 26672 ?        Ssl  lut06   0:03 /usr/libexec/xdg-desktop-portal-gtk
+monika      3897  0.0  0.0 33576152 2664 ?       Sl   lut06   0:00 /snap/discord/268/usr/share/discord/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/monika/snap/discord/268/.config/discord/Crashpad --url=https://f.a.k/e --annotation=_productName=discord --annotation=_version=0.0.123 --annotation=lsb-release=Ubuntu Core 22 --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=37.6.0 --initial-client-fd=37 --shared-client-connection
+monika      3945  0.0  0.7 34282416 114256 ?     Sl   lut06   0:13 /snap/discord/268/usr/share/discord/Discord --type=zygote --no-zygote-sandbox --disable-seccomp-filter-sandbox --no-sandbox
+monika      3957  0.0  0.2 33885156 42660 ?      Sl   lut06   0:21 /proc/self/exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pl --service-sandbox-type=none --no-sandbox --crashpad-handler-pid=3897 --enable-crash-reporter=d0f18ffb-b7fe-41b3-bdfe-e72903231e71,no_channel --user-data-dir=/home/monika/snap/discord/268/.config/discord --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6104315043488920541,16292703843275346136,262144 --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version
+monika      4095  0.0  0.0 169428 10200 ?        Ssl  lut06   0:00 /usr/libexec/gvfsd-metadata
+monika      4176  0.0  0.1 1966408 24672 ?       Sl   lut06   1:55 /home/monika/.MathWorks/ServiceHost/-mw_shared_installs/v2026.1.0.2/bin/glnxa64/MathWorksServiceHost-Monitor --client-id 3300 --realm-id companion@prod@production --lifetime-token 41 -1
+monika      5041  0.4  1.7 1482228044 277944 ?   Sl   lut06  13:28 /proc/self/exe --type=renderer --crashpad-handler-pid=3897 --enable-crash-reporter=d0f18ffb-b7fe-41b3-bdfe-e72903231e71,no_channel --user-data-dir=/home/monika/snap/discord/268/.config/discord --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --app-path=/snap/discord/268/usr/share/discord/resources/app.asar --no-sandbox --no-zygote --enable-blink-features=EnumerateDevices,AudioOutputDevices --disable-seccomp-filter-sandbox --no-sandbox --autoplay-policy=no-user-gesture-required --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=39427093 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6104315043488920541,16292703843275346136,262144 --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-node-leakage-in-renderers
+monika      5129  0.0  0.2 34117184 33060 ?      Sl   lut06   0:04 /proc/self/exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=pl --service-sandbox-type=none --no-sandbox --crashpad-handler-pid=3897 --enable-crash-reporter=d0f18ffb-b7fe-41b3-bdfe-e72903231e71,no_channel --user-data-dir=/home/monika/snap/discord/268/.config/discord --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,6104315043488920541,16292703843275346136,262144 --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version
+monika      5464  1.6  3.1 51291208 506540 ?     SLl  lut06  50:13 /opt/google/chrome/chrome --ozone-platform=x11
+monika      5469  0.0  0.0  11044  1984 ?        S    lut06   0:00 cat
+monika      5470  0.0  0.0  11044  1988 ?        S    lut06   0:00 cat
+monika      5472  0.0  0.0 50354876 2904 ?       Sl   lut06   0:00 /opt/google/chrome/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/monika/.config/google-chrome/Crash Reports --metrics-dir=/home/monika/.config/google-chrome --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=144.0.7559.109 --initial-client-fd=5 --shared-client-connection
+monika      5474  0.0  0.0 50345640 2548 ?       Sl   lut06   0:00 /opt/google/chrome/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/monika/.config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=144.0.7559.109 --initial-client-fd=4 --shared-client-connection
+monika      5480  0.0  0.4 50995712 65708 ?      S    lut06   0:00 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable
+monika      5481  0.0  0.4 50995704 65592 ?      S    lut06   0:00 /opt/google/chrome/chrome --type=zygote --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable
+monika      5483  0.0  0.1 50995732 18848 ?      S    lut06   0:07 /opt/google/chrome/chrome --type=zygote --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable
+monika      5508 10.2  1.2 51415756 208396 ?     Sl   lut06 310:55 /opt/google/chrome/chrome --type=gpu-process --ozone-platform=x11 --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAYAAAAAAAAABgAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --use-gl=disabled --shared-files --metrics-shmem-handle=4,i,1811034393858492106,9627892846350722314,262144 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190708988185955192
+monika      5510  0.6  0.9 50782076 155672 ?     Sl   lut06  19:07 /opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pl --service-sandbox-type=none --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,5187798167573553779,11859894554133411883,524288 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190708989122997041
+monika      5535  0.0  0.4 51072656 72732 ?      Sl   lut06   1:03 /opt/google/chrome/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --lang=pl --service-sandbox-type=utility --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,5420347411180397315,15347818302942395566,524288 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190708990060038890
+monika      5614  0.1  1.2 1460088196 201136 ?   Sl   lut06   3:38 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=11 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=55511015 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,9535812401442802034,9269283390585876742,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190708996619331833
+monika      5697  0.4  2.6 1463507432 423740 ?   Sl   lut06  13:38 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=15 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=56081717 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,8534879287373898590,6166018721026261478,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709000367499229
+monika      5760  0.3  1.2 1460035228 207296 ?   Sl   lut06  11:55 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=16 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=61494241 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,9988226112951132501,6540172407576540841,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709001304541078
+monika      5804  0.0  2.1 1461766692 346968 ?   Sl   lut06   2:33 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=21 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=62069328 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,461184097346895651,10834401055341336217,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709005989750323
+monika      5813  0.0  0.7 1460014064 116328 ?   Sl   lut06   0:01 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=22 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=62170683 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,7010719539773792902,17021458677017798731,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709006926792172
+monika      5864  0.0  0.8 1460013756 134964 ?   Sl   lut06   0:02 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=25 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=63923962 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,1745608441868350813,12658895609987025307,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709009737917719
+monika      5915  0.0  0.7 1460014696 121288 ?   Sl   lut06   1:33 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=27 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=65370663 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,14136592754352734721,14463250420346400977,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709011612001417
+monika      5969  0.3  0.5 51018928 90256 ?      Sl   lut06  10:38 /opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --lang=pl --service-sandbox-type=none --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,14447000036939768549,8229469999737233286,524288 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709014423126964
+monika      6110  0.0  0.2 541888 39488 ?        Sl   lut06   0:02 update-notifier
+monika     10870  0.0  0.6 1177910964 99120 ?    Sl   lut06   1:52 /snap/obsidian/x1/obsidian --no-sandbox
+monika     10917  0.0  0.1 34058416 29164 ?      S    lut06   0:00 /snap/obsidian/x1/obsidian --type=zygote --no-zygote-sandbox --no-sandbox
+monika     10918  0.0  0.1 34058400 29252 ?      S    lut06   0:00 /snap/obsidian/x1/obsidian --type=zygote --no-sandbox
+monika     10954  0.1  0.8 34579516 139876 ?     Sl   lut06   3:10 /snap/obsidian/x1/obsidian --type=gpu-process --no-sandbox --enable-crash-reporter=ef38e1f8-b459-4c85-a752-5f7f7114b813,no_channel --user-data-dir=/home/monika/snap/obsidian/x1/.config/obsidian --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --field-trial-handle=0,i,15739801933385806573,10840829050425632319,262144 --enable-features=SharedArrayBuffer,kWebSQLAccess --disable-features=SpareRendererForSitePerProcess --variations-seed-version
+monika     10964  0.0  0.2 33862440 41080 ?      Sl   lut06   0:06 /snap/obsidian/x1/obsidian --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pl --service-sandbox-type=none --no-sandbox --enable-crash-reporter=ef38e1f8-b459-4c85-a752-5f7f7114b813,no_channel --user-data-dir=/home/monika/snap/obsidian/x1/.config/obsidian --standard-schemes=app --secure-schemes=app --fetch-schemes=app --streaming-schemes=app --code-cache-schemes=app --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,15739801933385806573,10840829050425632319,262144 --enable-features=SharedArrayBuffer,kWebSQLAccess --disable-features=SpareRendererForSitePerProcess --variations-seed-version
+monika     10980  0.4  2.3 1190847072 375320 ?   Sl   lut06  14:11 /snap/obsidian/x1/obsidian --type=renderer --enable-crash-reporter=ef38e1f8-b459-4c85-a752-5f7f7114b813,no_channel --user-data-dir=/home/monika/snap/obsidian/x1/.config/obsidian --standard-schemes=app --secure-schemes=app --fetch-schemes=app --streaming-schemes=app --code-cache-schemes=app --app-path=/snap/obsidian/x1/resources/app.asar --no-sandbox --no-zygote --node-integration-in-worker --first-renderer-process --no-sandbox --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=2676747234 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,15739801933385806573,10840829050425632319,262144 --enable-features=SharedArrayBuffer,kWebSQLAccess --disable-features=SpareRendererForSitePerProcess --variations-seed-version
+monika     11173  0.1  2.6 1461818072 422748 ?   Sl   lut06   5:50 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=149 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=2728415769 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,18242391416128112225,12267501549335277189,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709125931106995
+monika     12976  1.4  2.8 1461789008 464808 ?   Sl   lut06  44:20 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=216 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=3606697988 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,14242781320987994304,9236861596483326079,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709188712910878
+monika     28817  0.1  1.9 1461799132 320852 ?   Sl   lut06   3:17 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=518 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=13811662286 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,10078920450063078887,6363076545586228594,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190709471699549276
+root       32096  0.0  0.0  76560 14420 ?        Ss   lut07   0:04 /usr/sbin/cupsd -l
+www-data   32098  0.0  0.0 240196 15400 ?        S    lut07   0:00 /usr/sbin/apache2 -k start
+www-data   32099  0.0  0.0 240196 15400 ?        S    lut07   0:00 /usr/sbin/apache2 -k start
+www-data   32100  0.0  0.0 240196 15400 ?        S    lut07   0:00 /usr/sbin/apache2 -k start
+www-data   32102  0.0  0.0 240196 15400 ?        S    lut07   0:00 /usr/sbin/apache2 -k start
+www-data   32103  0.0  0.0 240196 15232 ?        S    lut07   0:00 /usr/sbin/apache2 -k start
+root       32106  0.0  0.0 172260 11256 ?        Ssl  lut07   0:00 /usr/sbin/cups-browsed
+monika     61777  0.3  2.7 1460076688 452020 ?   Sl   lut07   6:05 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1112 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=31993994761 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,15263494801255544609,1382452390342896471,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190710028302407582
+root      114738  0.0  0.0  12696  3076 ?        Ss   09:06   0:00 /sbin/mount.ntfs /dev/nvme0n1p3 /media/monika/OS -o rw,nodev,nosuid,uid=1000,gid=1000,windows_names,uhelper=udisks2
+monika    159547  0.7  1.9 1460063636 317296 ?   Sl   19:50   0:47 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2751 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=90331307169 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,15880211224303091358,17366002953778633386,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711564113998093
+monika    159612  0.0  0.8 1460013884 135052 ?   Sl   19:50   0:01 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2757 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=90336719824 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,4944476314566669762,351754387254898094,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711569736249187
+monika    161450 11.4  2.7 1461773764 446344 ?   Sl   20:11   9:53 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2788 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=91561008407 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,8231514761255364825,1479308708867453247,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711598784546506
+root      164704  0.0  0.0   3212  1996 ?        S    20:45   0:00 sleep 3600
+root      166013  0.0  0.0      0     0 ?        I    20:58   0:01 [kworker/2:3-mm_percpu_wq]
+monika    166864  2.0  2.2 1460058396 356612 ?   Sl   21:06   0:39 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2906 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=94855706451 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,10108974114239660183,514239799678072448,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711709355484688
+monika    166887  0.0  0.8 1461717884 133488 ?   Sl   21:06   0:00 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2909 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=94859658386 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,12035301682366712338,11407683080610812702,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711712166610235
+root      166939  0.0  0.0      0     0 ?        I    21:06   0:00 [kworker/1:2-events]
+root      167645  0.0  0.0      0     0 ?        I    21:12   0:00 [kworker/6:0-cgroup_destroy]
+monika    167809  0.2  1.0 1460016484 176008 ?   Sl   21:13   0:02 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2935 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=95316092564 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,4292489074763323513,11851644169589149091,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711736529698309
+monika    167862  0.9  1.2 1460017980 194408 ?   Sl   21:14   0:12 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2937 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=95338765350 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,13896535555447452268,3886017864427718932,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711738403782007
+root      167994  0.1  0.0      0     0 ?        I<   21:15   0:01 [kworker/u17:1-i915_flip]
+root      168115  0.0  0.0      0     0 ?        I    21:16   0:00 [kworker/3:2-mm_percpu_wq]
+root      168144  0.0  0.0      0     0 ?        I    21:17   0:00 [kworker/4:1-cgroup_destroy]
+root      168296  0.0  0.0      0     0 ?        I    21:19   0:00 [kworker/0:0-cgroup_destroy]
+root      168302  0.0  0.0      0     0 ?        I    21:19   0:00 [kworker/1:1-mm_percpu_wq]
+root      168402  0.0  0.0      0     0 ?        I    21:20   0:00 [kworker/2:1-i915-unordered]
+root      168655  0.0  0.0      0     0 ?        I    21:23   0:00 [kworker/6:1-mm_percpu_wq]
+root      168695  0.0  0.0      0     0 ?        I    21:24   0:00 [kworker/0:2-mm_percpu_wq]
+root      168708  0.0  0.0      0     0 ?        I    21:24   0:00 [kworker/7:0-cgroup_destroy]
+root      168838  0.0  0.0      0     0 ?        I    21:25   0:00 [kworker/3:3-cgroup_destroy]
+root      168857  0.0  0.0      0     0 ?        I    21:27   0:00 [kworker/5:2-cgroup_destroy]
+root      168870  0.0  0.0      0     0 ?        I    21:27   0:00 [kworker/u16:29-events_power_efficient]
+root      168872  0.1  0.0      0     0 ?        I    21:27   0:00 [kworker/u16:31-writeback]
+root      168886  0.1  0.0      0     0 ?        I    21:27   0:00 [kworker/u16:45-events_unbound]
+root      168887  0.0  0.0      0     0 ?        I    21:27   0:00 [kworker/u16:46-flush-259:0]
+root      168893  0.0  0.0      0     0 ?        S    21:27   0:00 [irq/19-mmc0]
+root      168894  0.0  0.0      0     0 ?        S    21:27   0:00 [irq/133-mei_me]
+root      168897  0.0  0.0      0     0 ?        I    21:27   0:00 [kworker/4:4-cgroup_destroy]
+root      168954  0.0  0.0      0     0 ?        I    21:27   0:00 [kworker/5:3-cgroup_destroy]
+root      168999  0.0  0.0      0     0 ?        I<   21:27   0:00 [kworker/u17:0-rb_allocator]
+monika    169000  1.7  1.3 1461742352 220032 ?   Sl   21:28   0:09 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2951 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=96028132454 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,2509793102530279401,6951246263346856984,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711751522367893
+monika    169106  0.1  0.3 3125492 58236 ?       Sl   21:28   0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:1920:1080:1:27:0:0:0:0
+monika    169386  4.0  1.2 1478268480 195196 ?   SLsl 21:29   0:19 /usr/share/code/code .
+monika    169389  0.0  0.3 50848420 49664 ?      S    21:29   0:00 /usr/share/code/code --type=zygote --no-zygote-sandbox
+monika    169390  0.0  0.3 34071192 49920 ?      S    21:29   0:00 /usr/share/code/code --type=zygote
+monika    169392  0.0  0.0 34071220 12528 ?      S    21:29   0:00 /usr/share/code/code --type=zygote
+monika    169407  0.0  0.0 33576180 3328 ?       Sl   21:29   0:00 /usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/monika/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=655bdd59-742d-4b87-b3aa-642c4d43928d&iid=655bdd59-742d-4b87-b3aa-642c4d43928d&sid=655bdd59-742d-4b87-b3aa-642c4d43928d --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.108.2 --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=39.2.7 --initial-client-fd=48 --shared-client-connection
+monika    169425  4.8  0.9 51316372 149732 ?     Sl   21:29   0:23 /usr/share/code/code --type=zygote --no-zygote-sandbox
+monika    169434  1.9  0.4 33900348 76868 ?      Sl   21:29   0:09 /proc/self/exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=169407 --enable-crash-reporter=d8cad0ec-554e-4886-aa94-c6113517c447,no_channel --user-data-dir=/home/monika/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9189697550553729778,10972343329419475547,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708989122997041
+monika    169452 22.7  2.0 1463321736 336800 ?   Sl   21:29   1:48 /usr/share/code/code --type=zygote
+monika    169494 17.6  0.7 1461336140 120400 ?   Sl   21:29   1:24 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=169407 --enable-crash-reporter=d8cad0ec-554e-4886-aa94-c6113517c447,no_channel --user-data-dir=/home/monika/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9189697550553729778,10972343329419475547,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990997080739
+monika    169495  3.5  0.8 1461353020 142836 ?   Sl   21:29   0:16 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=169407 --enable-crash-reporter=d8cad0ec-554e-4886-aa94-c6113517c447,no_channel --user-data-dir=/home/monika/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9189697550553729778,10972343329419475547,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708991934122588
+monika    169525 11.8  3.1 1463058608 505004 ?   Sl   21:29   0:56 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --crashpad-handler-pid=169407 --enable-crash-reporter=d8cad0ec-554e-4886-aa94-c6113517c447,no_channel --user-data-dir=/home/monika/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9189697550553729778,10972343329419475547,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708992871164437
+monika    169575  0.0  0.4 1459513832 80608 ?    Sl   21:29   0:00 /usr/share/code/code /home/monika/.vscode/extensions/ms-azuretools.vscode-containers-2.3.0/dist/dockerfile-language-server-nodejs/lib/server.js --node-ipc --node-ipc --clientProcessId=169525
+monika    169576  0.0  0.4 1459513768 80252 ?    Sl   21:29   0:00 /usr/share/code/code /home/monika/.vscode/extensions/ms-azuretools.vscode-containers-2.3.0/dist/compose-language-service/lib/server.js --node-ipc --node-ipc --clientProcessId=169525
+monika    169762  0.1  0.5 1459513768 87488 ?    Sl   21:29   0:00 /usr/share/code/code /home/monika/.vscode/extensions/ckolkman.vscode-postgres-1.4.3/out/language/server.js --node-ipc --clientProcessId=169525
+monika    169774  0.1  0.5 1459513832 86628 ?    Sl   21:29   0:00 /usr/share/code/code /home/monika/.vscode/extensions/ibm.db2forzosdeveloperextension-2.2.4/dist/server.js --node-ipc --clientProcessId=169525
+root      169801  0.0  0.0      0     0 ?        I<   21:29   0:00 [kworker/u17:3-rb_allocator]
+monika    169847  1.1  0.5 7456056 92908 ?       Sl   21:29   0:05 /usr/lib/jvm/jdk-21-oracle-x64/bin/java -Dfile.encoding=UTF-8 -Ddb2.jcc.charsetDecoderEncoder=3 -cp /home/monika/.vscode/extensions/ibm.db2forzosdeveloperextension-2.2.4/dist/dss-dist-1-SNAPSHOT.jar::/home/monika/.vscode/extensions/ibm.db2forzosdeveloperextension-2.2.4/lib/*:/home/monika/.vscode/extensions/ibm.db2forzosdeveloperextension-2.2.4/lib/sqlj4.zip com.ibm.db2.server.DssLauncher 3000 off /home/monika/.config/Code/logs/20260208T212935/window1/exthost/IBM.db2forzosdeveloperextension -Xmx256M
+monika    170527  0.6  0.7 1459547248 121900 ?   Sl   21:30   0:02 /usr/share/code/code /home/monika/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/server/server.js --node-ipc --clientProcessId=169525
+monika    170528  1.5  0.0   5380  3980 ?        S    21:30   0:06 /home/monika/.vscode/extensions/ms-python.vscode-python-envs-1.16.0-linux-x64/python-env-tools/bin/pet server
+monika    170649  0.5  0.6 1461336812 110752 ?   Sl   21:30   0:02 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=169407 --enable-crash-reporter=d8cad0ec-554e-4886-aa94-c6113517c447,no_channel --user-data-dir=/home/monika/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9189697550553729778,10972343329419475547,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708993808206286
+monika    170984  0.0  0.0  17744  8944 pts/1    Ss+  21:30   0:00 /usr/bin/bash --init-file /usr/share/code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+monika    171366  0.5  0.2 208912 45744 ?        Sl   21:30   0:02 /bin/python3 /home/monika/.vscode/extensions/ms-python.isort-2025.0.0/bundled/tool/lsp_server.py
+monika    171368 19.1  4.9 1483185932 802572 ?   Sl   21:30   1:15 /usr/share/code/code /home/monika/.vscode/extensions/ms-python.vscode-pylance-2025.10.4/dist/server.bundle.js --cancellationReceive=file:5c7b4125cf1a6fd54d8245e7764b8e4a80b45e6696 --node-ipc --clientProcessId=169525
+root      171692  0.0  0.0      0     0 ?        I    21:31   0:00 [kworker/6:2]
+root      171919  0.0  0.0      0     0 ?        I    21:31   0:00 [kworker/7:1-mm_percpu_wq]
+root      172409  0.0  0.0      0     0 ?        I    21:33   0:00 [kworker/3:0-cgroup_destroy]
+root      172423  0.0  0.0      0     0 ?        I    21:33   0:00 [kworker/1:0-events]
+root      172636  0.0  0.0      0     0 ?        I    21:33   0:00 [kworker/2:0-i915-unordered]
+root      172830  0.0  0.0      0     0 ?        I    21:34   0:00 [kworker/4:0-mm_percpu_wq]
+monika    172834  1.4  0.4 1136008 69972 ?       Sl   21:34   0:03 /usr/bin/nautilus --gapplication-service
+root      172913  0.0  0.0      0     0 ?        I    21:34   0:00 [kworker/5:0-mm_percpu_wq]
+root      173067  0.0  0.0      0     0 ?        I    21:34   0:00 [kworker/6:3-cgroup_destroy]
+monika    173157  0.0  0.5 1461675704 82252 ?    Sl   21:34   0:00 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2968 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=96430016610 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,17774558544002184344,12254044258013587874,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711767452079326
+monika    173476  0.2  0.7 1461717132 128252 ?   Sl   21:35   0:00 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --extension-process --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2970 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=96474208066 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,7807147620628708107,3557998804906221015,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711769326163024
+root      173691  0.0  0.0      0     0 ?        I    21:35   0:00 [kworker/0:1-events]
+monika    174056  0.0  0.4 1459963572 75116 ?    Sl   21:36   0:00 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=5472 --enable-crash-reporter=f17a6e35-6c77-4fd3-979a-4e404abf33c4, --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --change-stack-guard-on-fork=enable --ozone-platform=x11 --disable-gpu-compositing --lang=pl --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2976 --time-ticks-at-unix-epoch=-1770401151123916 --launch-time-ticks=96547097916 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,3881372154002540773,16223896495530579107,2097152 --field-trial-handle=3,i,767442652047725675,5753258887663129919,262144 --variations-seed-version=20260206-010033.081000 --trace-process-track-uuid=3190711774948414118
+monika    174274  3.5  0.3 892680 52016 ?        Ssl  21:37   0:00 /usr/libexec/gnome-terminal-server
+monika    174309  0.2  0.0  17692  9088 pts/0    Ss   21:37   0:00 bash
+root      174529  0.0  0.0      0     0 ?        I    21:37   0:00 [kworker/7:2-cgroup_destroy]
+root      174530  0.0  0.0      0     0 ?        I    21:37   0:00 [kworker/7:3]
+root      174620  0.0  0.0      0     0 ?        I    21:37   0:00 [kworker/1:3]
+root      174677  0.0  0.0  16888  5888 pts/0    S+   21:37   0:00 sudo python3 -m ir_collector.main
+root      174678  0.0  0.0  16888  2360 pts/2    Ss   21:37   0:00 sudo python3 -m ir_collector.main
+root      174679  0.0  0.0  26040 13952 pts/2    S+   21:37   0:00 python3 -m ir_collector.main
+root      174684  0.0  0.0  14696  6912 ?        Ss   21:37   0:00 /lib/systemd/systemd-hostnamed
+root      174685  0.0  0.0  15204  3456 pts/2    R+   21:37   0:00 ps auxww

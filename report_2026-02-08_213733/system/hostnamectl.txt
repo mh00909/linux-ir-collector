@@ -1,0 +1,11 @@
+ Static hostname: monika-vivobook-asuslaptop-x512ja-k512ja
+ Pretty hostname: monika-VivoBook-ASUSLaptop-X512JA-K512JA
+       Icon name: computer-laptop
+         Chassis: laptop
+      Machine ID: 42bc7bd924df4b7eb67a437c08e82a4c
+         Boot ID: 51fac3acaa914e2e992f9ee3f307d0b8
+Operating System: Ubuntu 22.04.5 LTS
+          Kernel: Linux 6.8.0-94-generic
+    Architecture: x86-64
+ Hardware Vendor: ASUSTeK COMPUTER INC.
+  Hardware Model: VivoBook_ASUSLaptop X512JA_K512JA

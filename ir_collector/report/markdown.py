@@ -1,0 +1,49 @@
+from __future__ import annotations
+
+from pathlib import Path
+from datetime import datetime
+
+from ir_collector.utils.fs import write_text
+
+
+def write_markdown_report(out_dir: Path, results: dict) -> None:
+    now = datetime.now().isoformat(timespec="seconds")
+
+    lines = []
+    lines.append("# Linux IR Collector Report")
+    lines.append("")
+    lines.append(f"- Generated: `{now}`")
+    lines.append(f"- Output directory: `{out_dir.resolve()}`")
+    lines.append("")
+    lines.append("## Collected modules")
+    lines.append("")
+
+    for module_name, info in results.items():
+        files = info.get("files", [])
+        errors = info.get("errors", [])
+        lines.append(f"### {module_name}")
+        lines.append(f"- Files: {len(files)}")
+        if errors:
+            lines.append(f"- Errors: {len(errors)} (see details below)")
+        else:
+            lines.append("- Errors: 0")
+        for f in files[:10]:
+            lines.append(f"  - `{f}`")
+        if len(files) > 10:
+            lines.append(f"  - ... ({len(files)-10} more)")
+        lines.append("")
+
+    lines.append("## Errors (if any)")
+    lines.append("")
+    any_err = False
+    for module_name, info in results.items():
+        for e in info.get("errors", []):
+            any_err = True
+            lines.append(f"- **{module_name}** cmd=`{' '.join(e['cmd'])}` rc=`{e['rc']}`")
+            if e.get("stderr"):
+                lines.append(f"  - stderr: `{e['stderr'].strip()[:200]}`")
+    if not any_err:
+        lines.append("No errors reported.")
+    lines.append("")
+
+    write_text(out_dir / "report.md", "\n".join(lines))

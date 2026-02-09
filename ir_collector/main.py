@@ -9,6 +9,8 @@ from ir_collector.collectors.processes import collect_processes
 from ir_collector.collectors.network import collect_network
 from ir_collector.report.markdown import write_markdown_report
 from ir_collector.utils.ownership import chown_tree_to_sudo_user
+from ir_collector.collectors.users import collect_users
+from ir_collector.collectors.logs import collect_logs
 
 
 def parse_args() -> argparse.Namespace:
@@ -41,7 +43,10 @@ def main() -> int:
         "system": collect_system(out_dir),
         "processes": collect_processes(out_dir),
         "network": collect_network(out_dir),
+        "users": collect_users(out_dir),
+        "logs": collect_logs(out_dir),
     }
+
 
     if not args.no_report:
         write_markdown_report(out_dir, results)

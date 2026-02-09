@@ -3,12 +3,12 @@ from __future__ import annotations
 import argparse
 from datetime import datetime
 from pathlib import Path
-import sys
 
 from ir_collector.collectors.system import collect_system
 from ir_collector.collectors.processes import collect_processes
 from ir_collector.collectors.network import collect_network
 from ir_collector.report.markdown import write_markdown_report
+from ir_collector.utils.ownership import chown_tree_to_sudo_user
 
 
 def parse_args() -> argparse.Namespace:
@@ -37,14 +37,18 @@ def main() -> int:
     out_dir = Path(args.output) if args.output else Path(f"report_{ts}")
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Run collectors
-    results = {}
-    results["system"] = collect_system(out_dir)
-    results["processes"] = collect_processes(out_dir)
-    results["network"] = collect_network(out_dir)
+    results = {
+        "system": collect_system(out_dir),
+        "processes": collect_processes(out_dir),
+        "network": collect_network(out_dir),
+    }
 
     if not args.no_report:
         write_markdown_report(out_dir, results)
+
+    changed = chown_tree_to_sudo_user(out_dir)
+    if changed:
+        print("[+] Ownership changed to the invoking user (SUDO_UID/GID).")
 
     print(f"[+] Done. Output: {out_dir.resolve()}")
     return 0

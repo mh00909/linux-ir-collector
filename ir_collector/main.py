@@ -12,18 +12,20 @@ from ir_collector.utils.ownership import chown_tree_to_sudo_user
 from ir_collector.collectors.users import collect_users
 from ir_collector.collectors.logs import collect_logs
 
-
+# Parsowanie argumentów
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         prog="linux-ir-collector",
         description="Incident Response collector for Linux (system/process/network snapshot).",
     )
+    # katalog wyjściowy
     p.add_argument(
         "--output",
         "-o",
         default=None,
         help="Output directory. If omitted, creates report_YYYY-mm-dd_HHMMSS in current dir.",
     )
+    # Pominięcie generowania raportu (tylko surowe artefakty)
     p.add_argument(
         "--no-report",
         action="store_true",

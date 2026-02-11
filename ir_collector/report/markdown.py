@@ -33,6 +33,38 @@ def write_markdown_report(out_dir: Path, results: dict) -> None:
             lines.append(f"  - ... ({len(files)-10} more)")
         lines.append("")
 
+
+    # Findings
+    lines.append("## Findings (basic heuristics)")
+    lines.append("")
+
+    logs_info = results.get("logs", {})
+    findings = logs_info.get("findings", {}) or {}
+
+    if findings:
+        lines.append(f"- SSH log source: `{findings.get('log_source', 'unknown')}`")
+        lines.append(f"- `Failed password` count: **{findings.get('failed_password_count', 0)}**")
+        lines.append(f"- Unique source IPs: **{findings.get('unique_source_ips', 0)}**")
+        lines.append("")
+
+        top = findings.get("top_source_ips", []) or []
+        if top:
+            lines.append("### Top source IPs")
+            lines.append("")
+            lines.append("| IP | Count |")
+            lines.append("|---|---:|")
+            for item in top:
+                ip = item.get("ip", "unknown")
+                count = item.get("count", 0)
+                lines.append(f"| `{ip}` | {count} |")
+            lines.append("")
+        else:
+            lines.append("No IP addresses extracted from `Failed password` lines.")
+            lines.append("")
+    else:
+        lines.append("No heuristic findings available (no logs collected or parsing failed).")
+        lines.append("")
+
     lines.append("## Errors (if any)")
     lines.append("")
     any_err = False

@@ -65,6 +65,28 @@ def write_markdown_report(out_dir: Path, results: dict) -> None:
         lines.append("No heuristic findings available (no logs collected or parsing failed).")
         lines.append("")
 
+    lines.append("## Persistence (summary)")
+    lines.append("")
+
+    pers_info = results.get("persistence", {})
+    pers_find = pers_info.get("findings", {}) or {}
+
+    if pers_find:
+        lines.append(f"- Enabled services (unit-files): **{pers_find.get('enabled_services_count', 0)}**")
+        lines.append(f"- Timers listed: **{pers_find.get('timers_listed_count', 0)}**")
+        cron_dirs = pers_find.get("cron_dirs_present", []) or []
+        if cron_dirs:
+            lines.append(f"- Cron dirs present: `{', '.join(cron_dirs)}`")
+        else:
+            lines.append("- Cron dirs present: (none detected)")
+        lines.append(f"- Autostart entries: system **{pers_find.get('autostart_entries_system', 0)}**, user **{pers_find.get('autostart_entries_user', 0)}**")
+        lines.append("")
+        lines.append("Artifacts saved under `persistence/` (cron/, systemd/, autostart/).")
+        lines.append("")
+    else:
+        lines.append("No persistence findings available.")
+        lines.append("")
+
     lines.append("## Errors (if any)")
     lines.append("")
     any_err = False

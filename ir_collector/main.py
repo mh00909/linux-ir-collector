@@ -11,6 +11,7 @@ from ir_collector.report.markdown import write_markdown_report
 from ir_collector.utils.ownership import chown_tree_to_sudo_user
 from ir_collector.collectors.users import collect_users
 from ir_collector.collectors.logs import collect_logs
+from ir_collector.collectors.persistence import collect_persistence
 
 # Parsowanie argumentów
 def parse_args() -> argparse.Namespace:
@@ -41,18 +42,21 @@ def main() -> int:
     out_dir = Path(args.output) if args.output else Path(f"report_{ts}")
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    # Wyniki z poszczególnych modułów
     results = {
         "system": collect_system(out_dir),
         "processes": collect_processes(out_dir),
         "network": collect_network(out_dir),
         "users": collect_users(out_dir),
         "logs": collect_logs(out_dir),
+        "persistence": collect_persistence(out_dir),
     }
 
 
     if not args.no_report:
         write_markdown_report(out_dir, results)
 
+    # Zmiana właściciela katalogu wyjściowego, aby móc go łatwo usunąć bez sudo
     changed = chown_tree_to_sudo_user(out_dir)
     if changed:
         print("[+] Ownership changed to the invoking user (SUDO_UID/GID).")

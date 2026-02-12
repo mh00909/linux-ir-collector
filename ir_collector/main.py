@@ -12,6 +12,8 @@ from ir_collector.utils.ownership import chown_tree_to_sudo_user
 from ir_collector.collectors.users import collect_users
 from ir_collector.collectors.logs import collect_logs
 from ir_collector.collectors.persistence import collect_persistence
+from ir_collector.analysis.severity import calculate_severity
+
 
 # Parsowanie argumentów
 def parse_args() -> argparse.Namespace:
@@ -52,6 +54,11 @@ def main() -> int:
         "persistence": collect_persistence(out_dir),
     }
 
+    level, reasons = calculate_severity(results)
+    results["severity"] = {
+        "level": level,
+        "reasons": reasons,
+    }
 
     if not args.no_report:
         write_markdown_report(out_dir, results)

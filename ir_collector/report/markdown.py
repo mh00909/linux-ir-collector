@@ -87,6 +87,19 @@ def write_markdown_report(out_dir: Path, results: dict) -> None:
         lines.append("No persistence findings available.")
         lines.append("")
 
+    severity = results.get("severity")
+    if severity:
+        lines.append("## Overall Risk Assessment")
+        lines.append("")
+        lines.append(f"**Risk Level:** {severity['level']}**")
+        lines.append("")
+        lines.append("### Reasons:")
+        lines.append("")
+        for r in severity["reasons"]:
+            lines.append(f"- {r}")
+        lines.append("")
+
+
     lines.append("## Errors (if any)")
     lines.append("")
     any_err = False

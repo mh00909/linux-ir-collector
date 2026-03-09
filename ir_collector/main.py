@@ -1,9 +1,15 @@
 from __future__ import annotations
+import os
+import sys
 
+if os.geteuid() != 0:
+    print("[ERROR] Ten program wymaga uprawnień root.")
+    print("        Uruchom: sudo python3 main.py")
+    sys.exit(1)
+
+from pathlib import Path
 import argparse
 from datetime import datetime
-from pathlib import Path
-
 from ir_collector.collectors.system import collect_system
 from ir_collector.collectors.processes import collect_processes
 from ir_collector.collectors.network import collect_network
@@ -43,16 +49,23 @@ def main() -> int:
     ts = datetime.now().strftime("%Y-%m-%d_%H%M%S")
     out_dir = Path(args.output) if args.output else Path(f"report_{ts}")
     out_dir.mkdir(parents=True, exist_ok=True)
+    os.chmod(out_dir, 0o700)
 
-    # Wyniki z poszczególnych modułów
-    results = {
-        "system": collect_system(out_dir),
-        "processes": collect_processes(out_dir),
-        "network": collect_network(out_dir),
-        "users": collect_users(out_dir),
-        "logs": collect_logs(out_dir),
-        "persistence": collect_persistence(out_dir),
-    }
+    results = {}
+    for name, func in [
+        ("system", collect_system),
+        ("processes", collect_processes),
+        ("network", collect_network),
+        ("users", collect_users),
+        ("logs", collect_logs),
+        ("persistence", collect_persistence),
+    ]:
+        try:
+            print(f"[*] Collecting {name}...")
+            results[name] = func(out_dir)
+        except Exception as e:
+            print(f"[WARN] Collector '{name}' failed: {e}")
+            results[name] = {"error": str(e)}
 
     level, reasons = calculate_severity(results)
     results["severity"] = {

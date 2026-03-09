@@ -9,7 +9,7 @@ from ir_collector.utils.fs import write_text
 from ir_collector.utils.shell import run
 
 
-IPV4_RE = re.compile(r"\b(\d{1,3}(?:\.\d{1,3}){3})\b")
+IPV4_RE = re.compile(r'\b((?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))\b')
 
 
 def _tail_lines(text: str, n: int) -> str:

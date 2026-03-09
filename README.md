@@ -1,10 +1,7 @@
 # linux-ir-collector
 
-A lightweight Linux Incident Response collector written in Python. Designed to be run on a potentially compromised system to gather forensic artifacts, detect common attack patterns, and generate a structured Markdown report — with no external dependencies.
+A lightweight Linux Incident Response collector written in Python. Designed to be run on a potentially compromised system to gather forensic artifacts, detect common attack patterns, and generate a structured Markdown report.
 
-```
-Linux system → collectors → artifacts → analysis → severity score → report.md
-```
 
 ---
 
@@ -33,8 +30,6 @@ Linux system → collectors → artifacts → analysis → severity score → re
 git clone https://github.com/mh00909/linux-ir-collector.git
 cd linux-ir-collector
 ```
-
-No packages to install.
 
 ---
 
@@ -182,29 +177,3 @@ less ir_report_<timestamp>/report.md
 tar -czf ir_report.tar.gz ir_report_<timestamp>/
 ```
 
-The resulting archive can be sent to a security analyst, attached to an incident ticket, or analyzed offline.
-
----
-
-## Security Notes
-
-- The output directory contains a copy of `/etc/shadow`. Treat it as sensitive and restrict access accordingly (`chmod 700`).
-- The tool does not transmit any data over the network. All output is written locally.
-- Artifact files are not hashed by default — if chain of custody is required, hash the output directory manually after collection:
-  ```bash
-  find ir_report_<timestamp>/ -type f -exec sha256sum {} \; > checksums.txt
-  ```
-
----
-
-## Limitations
-
-- Designed for Linux only; not compatible with macOS or Windows.
-- Log parsing targets Debian/Ubuntu (`auth.log`) and RHEL/Fedora (`secure`); other distributions may require path adjustments.
-- Does not perform memory acquisition or disk imaging.
-
----
-
-## License
-
-This project is not yet licensed. All rights reserved by the author.

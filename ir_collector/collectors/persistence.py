@@ -4,210 +4,151 @@ import os
 from pathlib import Path
 from typing import List
 
+from ir_collector.collectors.base import BaseCollector
 from ir_collector.utils.fs import write_text
 from ir_collector.utils.shell import run
 
 
-# Helpers
-SUSPICIOUS_KEYWORDS = [
-    "curl",
-    "wget",
-    "bash",
-    "sh ",
-    "nc ",
-    "python",
-    "/tmp",
-    "/var/tmp",
-    "base64",
+SUSPICIOUS_KEYWORDS = ["curl", "wget", "bash", "sh ", "nc ", "python",
+                       "/tmp", "/var/tmp", "base64"]
+
+CRON_FILES = [Path("/etc/crontab")]
+CRON_DIRS = [
+    Path("/etc/cron.d"), Path("/etc/cron.daily"), Path("/etc/cron.hourly"),
+    Path("/etc/cron.weekly"), Path("/etc/cron.monthly"),
 ]
 
 
-def _read_file_best_effort(path: Path) -> str:
-    try:
-        return path.read_text(encoding="utf-8", errors="replace")
-    except Exception as e:
-        return f"[ERROR] Could not read {path}: {e}\n"
+class PersistenceCollector(BaseCollector):
+    name = "persistence"
 
+    def _read_file(self, path: Path) -> str:
+        try:
+            return path.read_text(encoding="utf-8", errors="replace")
+        except Exception as e:
+            return f"[ERROR] Could not read {path}: {e}\n"
 
-def _list_dir_files(dir_path: Path) -> str:
-    try:
-        files = [p.name for p in dir_path.iterdir() if p.is_file()]
-        return "\n".join(sorted(files)) + ("\n" if files else "")
-    except Exception as e:
-        return f"[ERROR] Could not list {dir_path}: {e}\n"
+    def _list_dir(self, path: Path) -> str:
+        try:
+            files = sorted(p.name for p in path.iterdir() if p.is_file())
+            return "\n".join(files) + ("\n" if files else "")
+        except Exception as e:
+            return f"[ERROR] Could not list {path}: {e}\n"
 
-
-def _extract_suspicious_lines(text: str) -> List[str]:
-    hits = []
-    for line in text.splitlines():
-        lower = line.lower()
-        for kw in SUSPICIOUS_KEYWORDS:
-            if kw in lower:
+    def _suspicious_lines(self, text: str) -> List[str]:
+        hits = []
+        for line in text.splitlines():
+            if any(kw in line.lower() for kw in SUSPICIOUS_KEYWORDS):
                 hits.append(line.strip())
-                break
-    return hits
+        return hits
 
+    def _collect_cron(self) -> None:
+        for p in CRON_FILES:
+            if p.exists():
+                out = self.base / "cron" / p.name
+                write_text(out, self._read_file(p))
+                self._add_file(out)
 
-# Main collector
+        for d in CRON_DIRS:
+            if d.exists() and d.is_dir():
+                out = self.base / "cron" / f"{d.name}_listing.txt"
+                write_text(out, self._list_dir(d))
+                self._add_file(out)
+
+        res = run(["crontab", "-l"], timeout_s=15)
+        out = self.base / "cron" / "crontab_current_user.txt"
+        write_text(out, res.stdout if res.stdout else res.stderr)
+        self._add_file(out)
+        if res.returncode != 0:
+            self._add_error(res.cmd, res.stderr, res.returncode)
+
+        sudo_user = os.environ.get("SUDO_USER")
+        if sudo_user:
+            res2 = run(["crontab", "-u", sudo_user, "-l"], timeout_s=15)
+            out2 = self.base / "cron" / f"crontab_{sudo_user}.txt"
+            write_text(out2, res2.stdout if res2.stdout else res2.stderr)
+            self._add_file(out2)
+            if res2.returncode != 0:
+                self._add_error(res2.cmd, res2.stderr, res2.returncode)
+
+    def _collect_systemd(self) -> None:
+        cmds = {
+            "systemd_list_timers.txt": ["systemctl", "list-timers", "--all", "--no-pager"],
+            "systemd_unit_files_services.txt": ["systemctl", "list-unit-files",
+                                                "--type=service", "--no-pager"],
+            "systemd_unit_files_timers.txt": ["systemctl", "list-unit-files",
+                                              "--type=timer", "--no-pager"],
+        }
+        for fname, cmd in cmds.items():
+            res = run(cmd, timeout_s=25)
+            out = self.base / "systemd" / fname
+            write_text(out, res.stdout if res.stdout else res.stderr)
+            self._add_file(out)
+            if res.returncode != 0:
+                self._add_error(res.cmd, res.stderr, res.returncode)
+
+    def _collect_autostart(self) -> None:
+        for label, path in [
+            ("etc_xdg_autostart", Path("/etc/xdg/autostart")),
+            ("user_autostart", Path.home() / ".config" / "autostart"),
+        ]:
+            if path.exists() and path.is_dir():
+                out = self.base / "autostart" / f"{label}_listing.txt"
+                write_text(out, self._list_dir(path))
+                self._add_file(out)
+
+    def _build_findings(self) -> dict:
+        findings: dict = {}
+
+        services_txt = self.base / "systemd" / "systemd_unit_files_services.txt"
+        if services_txt.exists():
+            text = services_txt.read_text(encoding="utf-8", errors="replace")
+            findings["enabled_services_count"] = sum(
+                1 for l in text.splitlines()
+                if l.strip().endswith(" enabled") and ".service" in l
+            )
+
+        timers_txt = self.base / "systemd" / "systemd_list_timers.txt"
+        if timers_txt.exists():
+            text = timers_txt.read_text(encoding="utf-8", errors="replace")
+            findings["timers_listed_count"] = sum(1 for l in text.splitlines() if ".timer" in l)
+
+        findings["cron_dirs_present"] = [d.name for d in CRON_DIRS if d.exists()]
+
+        for label, path in [
+            ("autostart_entries_system", Path("/etc/xdg/autostart")),
+            ("autostart_entries_user", Path.home() / ".config" / "autostart"),
+        ]:
+            try:
+                findings[label] = len(list(path.iterdir())) if path.exists() else 0
+            except OSError:
+                findings[label] = -1
+
+        cron_dir = self.base / "cron"
+        suspicious_cron: list = []
+        if cron_dir.exists():
+            for f in cron_dir.glob("*.txt"):
+                suspicious_cron.extend(
+                    self._suspicious_lines(f.read_text(encoding="utf-8", errors="replace"))
+                )
+        findings["suspicious_cron_entries"] = suspicious_cron[:20]
+
+        suspicious_systemd: list = []
+        if services_txt.exists():
+            suspicious_systemd.extend(
+                self._suspicious_lines(services_txt.read_text(encoding="utf-8", errors="replace"))
+            )
+        findings["suspicious_systemd_entries"] = suspicious_systemd[:20]
+
+        return findings
+
+    def collect(self) -> dict:
+        self._collect_cron()
+        self._collect_systemd()
+        self._collect_autostart()
+        self.collected["findings"] = self._build_findings()
+        return self.collected
+
 
 def collect_persistence(out_dir: Path) -> dict:
-    base = out_dir / "persistence"
-    collected: dict = {"files": [], "errors": [], "findings": {}}
-
-    # CRON
-    cron_files = [Path("/etc/crontab")]
-    cron_dirs = [
-        Path("/etc/cron.d"),
-        Path("/etc/cron.daily"),
-        Path("/etc/cron.hourly"),
-        Path("/etc/cron.weekly"),
-        Path("/etc/cron.monthly"),
-    ]
-
-    # Save system crontab
-    for p in cron_files:
-        if p.exists():
-            out = base / "cron" / p.name
-            write_text(out, _read_file_best_effort(p))
-            collected["files"].append(str(out.relative_to(out_dir)))
-
-    # Save cron directory listings
-    for d in cron_dirs:
-        if d.exists() and d.is_dir():
-            out_list = base / "cron" / f"{d.name}_listing.txt"
-            write_text(out_list, _list_dir_files(d))
-            collected["files"].append(str(out_list.relative_to(out_dir)))
-
-    # Current user crontab
-    res = run(["crontab", "-l"], timeout_s=15)
-    out = base / "cron" / "crontab_current_user.txt"
-    write_text(out, res.stdout if res.stdout else res.stderr)
-    collected["files"].append(str(out.relative_to(out_dir)))
-    if res.returncode != 0:
-        collected["errors"].append(
-            {"cmd": res.cmd, "stderr": res.stderr, "rc": res.returncode}
-        )
-
-    # (If running via sudo) collect original user
-    sudo_user = os.environ.get("SUDO_USER")
-    if sudo_user:
-        res2 = run(["crontab", "-u", sudo_user, "-l"], timeout_s=15)
-        out2 = base / "cron" / f"crontab_sudo_user_{sudo_user}.txt"
-        write_text(out2, res2.stdout if res2.stdout else res2.stderr)
-        collected["files"].append(str(out2.relative_to(out_dir)))
-        if res2.returncode != 0:
-            collected["errors"].append(
-                {"cmd": res2.cmd, "stderr": res2.stderr, "rc": res2.returncode}
-            )
-
-    # SYSTEMD
-    cmds = {
-        "systemd_list_timers.txt": [
-            "systemctl",
-            "list-timers",
-            "--all",
-            "--no-pager",
-        ],
-        "systemd_unit_files_services.txt": [
-            "systemctl",
-            "list-unit-files",
-            "--type=service",
-            "--no-pager",
-        ],
-        "systemd_unit_files_timers.txt": [
-            "systemctl",
-            "list-unit-files",
-            "--type=timer",
-            "--no-pager",
-        ],
-    }
-
-    for fname, cmd in cmds.items():
-        resx = run(cmd, timeout_s=25)
-        outp = base / "systemd" / fname
-        write_text(outp, resx.stdout if resx.stdout else resx.stderr)
-        collected["files"].append(str(outp.relative_to(out_dir)))
-        if resx.returncode != 0:
-            collected["errors"].append(
-                {"cmd": resx.cmd, "stderr": resx.stderr, "rc": resx.returncode}
-            )
-
-    # AUTOSTART
-
-    sys_autostart = Path("/etc/xdg/autostart")
-    user_autostart = Path.home() / ".config" / "autostart"
-
-    if sys_autostart.exists() and sys_autostart.is_dir():
-        out_list = base / "autostart" / "etc_xdg_autostart_listing.txt"
-        write_text(out_list, _list_dir_files(sys_autostart))
-        collected["files"].append(str(out_list.relative_to(out_dir)))
-
-    if user_autostart.exists() and user_autostart.is_dir():
-        out_list = base / "autostart" / "user_autostart_listing.txt"
-        write_text(out_list, _list_dir_files(user_autostart))
-        collected["files"].append(str(out_list.relative_to(out_dir)))
-
-    # FINDINGS
-    findings = {}
-
-    # Enabled services count
-    services_txt = base / "systemd" / "systemd_unit_files_services.txt"
-    if services_txt.exists():
-        text = services_txt.read_text(encoding="utf-8", errors="replace")
-        enabled = sum(
-            1
-            for line in text.splitlines()
-            if line.strip().endswith(" enabled") and ".service" in line
-        )
-        findings["enabled_services_count"] = enabled
-
-    # Timers count
-    timers_txt = base / "systemd" / "systemd_list_timers.txt"
-    if timers_txt.exists():
-        text = timers_txt.read_text(encoding="utf-8", errors="replace")
-        timers = sum(1 for l in text.splitlines() if ".timer" in l)
-        findings["timers_listed_count"] = timers
-
-    # Cron directories present
-    findings["cron_dirs_present"] = [
-        d.name for d in cron_dirs if d.exists() and d.is_dir()
-    ]
-
-    # Autostart counts
-    try:
-        findings["autostart_entries_system"] = (
-            len([p for p in sys_autostart.iterdir() if p.is_file()])
-            if sys_autostart.exists()
-            else 0
-        )
-    except OSError:
-        findings["autostart_entries_system"] = -1
-
-    try:
-        findings["autostart_entries_user"] = (
-            len([p for p in user_autostart.iterdir() if p.is_file()])
-            if user_autostart.exists()
-            else 0
-        )
-    except OSError:
-        findings["autostart_entries_user"] = -1
-
-    # Suspicious heuristics
-    suspicious_cron_entries = []
-    cron_dir = base / "cron"
-    if cron_dir.exists():
-        for f in cron_dir.glob("*.txt"):
-            text = f.read_text(encoding="utf-8", errors="replace")
-            suspicious_cron_entries.extend(_extract_suspicious_lines(text))
-
-    findings["suspicious_cron_entries"] = suspicious_cron_entries[:20]
-
-    suspicious_services = []
-    if services_txt.exists():
-        text = services_txt.read_text(encoding="utf-8", errors="replace")
-        suspicious_services.extend(_extract_suspicious_lines(text))
-
-    findings["suspicious_systemd_entries"] = suspicious_services[:20]
-
-    collected["findings"] = findings
-    return collected
+    return PersistenceCollector(out_dir).collect()

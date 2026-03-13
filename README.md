@@ -168,7 +168,7 @@ Severity levels:
 
 ```bash
 # 1. Suspected breach — run the collector
-sudo python3 main.py
+sudo python3 -m ir_collector.main
 
 # 2. Review the report
 less ir_report_<timestamp>/report.md

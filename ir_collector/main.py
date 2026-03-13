@@ -21,6 +21,7 @@ from ir_collector.collectors.persistence import collect_persistence
 from ir_collector.analysis.severity import calculate_severity
 from ir_collector.utils.hashing import generate_checksums
 from ir_collector.report.json_export import write_json_report
+from ir_collector.analysis.timeline import build_timeline, write_timeline
 
 # Parsowanie argumentów
 def parse_args() -> argparse.Namespace:
@@ -73,6 +74,9 @@ def main() -> int:
         "level": level,
         "reasons": reasons,
     }
+    events = build_timeline(out_dir, results)
+    write_timeline(out_dir, events)
+    print(f"[+] Timeline: {len(events)} events written to timeline.txt")
 
     if not args.no_report:
         write_markdown_report(out_dir, results)

@@ -49,27 +49,32 @@ def collect_logs(out_dir: Path, max_lines: int = 2000) -> dict:
 
     log_text = ""
 
-    # Prefer /var/log/auth.log (Debian/Ubuntu)
     auth_log = Path("/var/log/auth.log")
     secure_log = Path("/var/log/secure")  # RHEL/CentOS
 
+
     if auth_log.exists():
-        log_text = auth_log.read_text(encoding="utf-8", errors="replace")
-        log_text = _tail_lines(log_text, max_lines)
-        source = "auth.log"
+        try:
+            log_text = auth_log.read_text(encoding="utf-8", errors="replace")
+        except OSError as e:
+            collected["errors"].append({"file": str(auth_log), "error": str(e)})
+            log_text = ""
+            source = "unavailable"
     elif secure_log.exists():
-        log_text = secure_log.read_text(encoding="utf-8", errors="replace")
-        log_text = _tail_lines(log_text, max_lines)
-        source = "secure"
+        try:
+            log_text = secure_log.read_text(encoding="utf-8", errors="replace")
+            log_text = _tail_lines(log_text, max_lines)
+            source = "secure"
+        except OSError as e:
+            collected["errors"].append({"file": str(secure_log), "error": str(e)})
+            log_text = ""
+            source = "unavailable"
     else:
-        # Fallback to journald (best effort)
-        # Try sshd logs (works on many distros)
         res = run(["journalctl", "_COMM=sshd", "--no-pager", "-n", str(max_lines)], timeout_s=25)
         if res.returncode == 0 and res.stdout.strip():
             log_text = res.stdout
             source = "journald(_COMM=sshd)"
         else:
-            # last fallback: auth facility may be named differently; store error
             source = "journald(fallback)"
             log_text = res.stdout if res.stdout else res.stderr
             collected["errors"].append({"cmd": res.cmd, "stderr": res.stderr, "rc": res.returncode})

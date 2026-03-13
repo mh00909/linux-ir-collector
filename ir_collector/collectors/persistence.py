@@ -88,7 +88,7 @@ def collect_persistence(out_dir: Path) -> dict:
             {"cmd": res.cmd, "stderr": res.stderr, "rc": res.returncode}
         )
 
-    # If running via sudo — collect original user
+    # (If running via sudo) collect original user
     sudo_user = os.environ.get("SUDO_USER")
     if sudo_user:
         res2 = run(["crontab", "-u", sudo_user, "-l"], timeout_s=15)
@@ -174,17 +174,23 @@ def collect_persistence(out_dir: Path) -> dict:
     ]
 
     # Autostart counts
-    findings["autostart_entries_system"] = (
-        len([p for p in sys_autostart.iterdir() if p.is_file()])
-        if sys_autostart.exists()
-        else 0
-    )
+    try:
+        findings["autostart_entries_system"] = (
+            len([p for p in sys_autostart.iterdir() if p.is_file()])
+            if sys_autostart.exists()
+            else 0
+        )
+    except OSError:
+        findings["autostart_entries_system"] = -1
 
-    findings["autostart_entries_user"] = (
-        len([p for p in user_autostart.iterdir() if p.is_file()])
-        if user_autostart.exists()
-        else 0
-    )
+    try:
+        findings["autostart_entries_user"] = (
+            len([p for p in user_autostart.iterdir() if p.is_file()])
+            if user_autostart.exists()
+            else 0
+        )
+    except OSError:
+        findings["autostart_entries_user"] = -1
 
     # Suspicious heuristics
     suspicious_cron_entries = []

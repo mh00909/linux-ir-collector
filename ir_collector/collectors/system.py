@@ -18,7 +18,7 @@ def collect_system(out_dir: Path) -> dict:
     }
 
     for fname, cmd in cmds.items():
-        res = run(cmd)
+        res = run(cmd, timeout_s=15)
         write_text(base / fname, res.stdout if res.stdout else res.stderr)
         collected["files"].append(str((base / fname).relative_to(out_dir)))
         if res.returncode != 0:

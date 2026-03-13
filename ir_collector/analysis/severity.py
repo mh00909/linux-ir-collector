@@ -40,7 +40,9 @@ def calculate_severity(all_results: Dict) -> Tuple[str, List[str]]:
         score += 2
         reasons.append("Suspicious systemd entries detected")
 
-    if score >= 5:
+    if score >= 8:
+        level = "CRITICAL"
+    elif score >= 5:
         level = "HIGH"
     elif score >= 2:
         level = "MEDIUM"

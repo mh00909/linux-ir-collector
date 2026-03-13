@@ -91,7 +91,7 @@ def write_markdown_report(out_dir: Path, results: dict) -> None:
     if severity:
         lines.append("## Overall Risk Assessment")
         lines.append("")
-        lines.append(f"**Risk Level:** {severity['level']}**")
+        lines.append(f"**Risk Level:** {severity['level']}")
         lines.append("")
         lines.append("### Reasons:")
         lines.append("")

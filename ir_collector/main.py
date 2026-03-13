@@ -19,7 +19,8 @@ from ir_collector.collectors.users import collect_users
 from ir_collector.collectors.logs import collect_logs
 from ir_collector.collectors.persistence import collect_persistence
 from ir_collector.analysis.severity import calculate_severity
-
+from ir_collector.utils.hashing import generate_checksums
+from ir_collector.report.json_export import write_json_report
 
 # Parsowanie argumentów
 def parse_args() -> argparse.Namespace:
@@ -75,8 +76,11 @@ def main() -> int:
 
     if not args.no_report:
         write_markdown_report(out_dir, results)
+        write_json_report(out_dir, results) 
 
-    # Zmiana właściciela katalogu wyjściowego, aby móc go łatwo usunąć bez sudo
+    generate_checksums(out_dir)  
+    print("[+] Checksums written to checksums.sha256")
+
     changed = chown_tree_to_sudo_user(out_dir)
     if changed:
         print("[+] Ownership changed to the invoking user (SUDO_UID/GID).")

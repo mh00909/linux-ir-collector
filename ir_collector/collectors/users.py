@@ -31,7 +31,6 @@ def collect_users(out_dir: Path) -> dict:
         collected["files"].append(str((base / "group.txt").relative_to(out_dir)))
 
     if shadow.exists():
-        # do NOT parse; just snapshot for IR (may fail without sudo)
         write_text(base / "shadow.txt", _read_file_best_effort(shadow))
         collected["files"].append(str((base / "shadow.txt").relative_to(out_dir)))
 

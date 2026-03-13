@@ -23,7 +23,6 @@ def collect_network(out_dir: Path) -> dict:
         if res.returncode != 0:
             collected["errors"].append({"cmd": res.cmd, "stderr": res.stderr, "rc": res.returncode})
 
-    # DNS info (best effort)
     resolv = Path("/etc/resolv.conf")
     if resolv.exists():
         write_text(base / "resolv.conf.txt", resolv.read_text(encoding="utf-8", errors="replace"))

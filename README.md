@@ -146,6 +146,10 @@ The browser-based UI reads report.json from each run directory and presents find
 ### Stack
 - Backend: FastAPI, served on localhost:8000
 - Frontend: React 18, Vite 7, Tailwind CSS v4
+### Screenshots
+<img width="1837" height="707" alt="im1" src="https://github.com/user-attachments/assets/7579cce0-1f8d-4e9e-bf78-05bdd1548509" />
+<img width="1837" height="707" alt="im2" src="https://github.com/user-attachments/assets/676efc71-3a36-4bbc-9d85-109ec7085e99" />
+
 
 ---
 ## Typical Incident Response Workflow
